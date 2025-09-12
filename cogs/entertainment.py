@@ -26,3 +26,32 @@ class Entertainment(commands.Cog):
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Entertainment(bot))
+    @app_commands.command(name="flip", description="Jogue uma moeda.")
+    async def flip(self, interaction: discord.Interaction):
+        result = random.choice(["Cara", "Coroa"])
+        await interaction.response.send_message(f"🪙 Resultado: **{result}**")
+
+    @app_commands.command(name="8ball", description="Pergunte algo para a bola mágica 8.")
+    async def eight_ball(self, interaction: discord.Interaction, question: str):
+        responses = [
+            "Sim.", "Não.", "Talvez.", "Definitivamente sim.", "Definitivamente não.",
+            "Pergunte novamente mais tarde.", "Não posso prever agora.", "Concentre-se e pergunte novamente."
+        ]
+        await interaction.response.send_message(f"🎱 {random.choice(responses)}")
+
+    @app_commands.command(name="rps", description="Jogue pedra, papel ou tesoura contra o bot.")
+    async def rps(self, interaction: discord.Interaction, escolha: str):
+        escolhas = ["pedra", "papel", "tesoura"]
+        escolha = escolha.lower()
+        if escolha not in escolhas:
+            return await interaction.response.send_message("Escolha pedra, papel ou tesoura.", ephemeral=True)
+        bot_escolha = random.choice(escolhas)
+        if escolha == bot_escolha:
+            resultado = "Empate!"
+        elif (escolha == "pedra" and bot_escolha == "tesoura") or \
+             (escolha == "papel" and bot_escolha == "pedra") or \
+             (escolha == "tesoura" and bot_escolha == "papel"):
+            resultado = "Você venceu!"
+        else:
+            resultado = "Você perdeu!"
+        await interaction.response.send_message(f"Você escolheu **{escolha}**. O bot escolheu **{bot_escolha}**. {resultado}")
