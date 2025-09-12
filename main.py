@@ -36,7 +36,7 @@ async def load_extensions():
 async def main():
    
     await load_extensions()
-    token = ("MTQwNzEzNjA3Nzg5Mzg2NTUyMA.GEFr40.eLTu2l-idYpTXj4H6AiVo0fZPrCh4fF87JM40M")
+    token = ("coloca o  token do seu bot aqui")
     if not token:
         raise RuntimeError("Variável de ambiente DISCORD_TOKEN não definida. Configure seu token com DISCORD_TOKEN.")
     await bot.start(token)
