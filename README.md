@@ -1,5 +1,5 @@
 # Yuri Music
-<img src="https://i.imgur.com/ajAewwM.png" witdh="400" height="800"/>
+<img src="https://i.imgur.com/tKqX5yb.png" witdh="400" height="800"/>
 ## Como rodar
 1. instale:
    ```bash
