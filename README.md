@@ -28,3 +28,5 @@
 - `/level`, `/economy`
 
 Se você quiser estilizar e adicionar mais comandos depois é você que sabe, eu só tô testando esse.
+
+#### bot inteiramente criado em python para um melhor desempenho e facilidade na hora de programar, no futuro eu pretendo adicionar novas funcionalidades e opções para uso em grupos do discord.
